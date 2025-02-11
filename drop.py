@@ -26,7 +26,7 @@ def modify_packet(packet):
     if packet.haslayer(UDP) and (packet[UDP].sport in KNOWN_RTP_PORTS or packet[UDP].dport in KNOWN_RTP_PORTS):
         print(f"Intercepted RTP packet from {packet[IP].src} to {packet[IP].dst}")
 
-        # 80% chance to drop
+        # 50% chance to drop
         if random.random() < 0.5:
             print("Doing nothing!")
             return  
