@@ -27,8 +27,8 @@ def modify_packet(packet):
         print(f"Intercepted RTP packet from {packet[IP].src} to {packet[IP].dst}")
 
         # 80% chance to drop
-        if random.random() < 0.8:
-            print("Dropping packet!")
+        if random.random() < 0.5:
+            print("Doing nothing!")
             return  
 
         if packet.haslayer(Raw):
